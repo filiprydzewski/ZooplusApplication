@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Currency Exchange</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div>
+<h1 th:text="'exchange-rates    ' + 'PLN' + '-' + ${exchangeRatesSeries.code}"/>
+
+<div id="tab">
+<table >
+    <tr class="rates">
+        <th class="rates">date</th>
+        <th class="rates">buy</th>
+        <th class="rates">sell</th>
+
+    </tr>
+    <div id="rates-table" th:each="r : ${exchangeRatesSeries.rates}">
+    <tr class="rates">
+        <td class="rates" th:text="${r.effectiveDate}"/>
+        <td class="rates" th:text="${r.bid}"/>
+        <td class="rates" th:text="${r.ask}"/>
+    </tr>
+    </div>
+</table>
+</div>
+</div>
+
+</body>

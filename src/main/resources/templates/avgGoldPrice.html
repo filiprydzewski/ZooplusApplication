@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Average gold price for the last 14 days</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script th:inline="javascript">
+        var price = [[${price}]];
+    </script>
+    <script type="text/javascript"  th:src="@{/gold.js}" defer></script>
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <canvas id="myChart"></canvas>
+</div>
+
+
+
+
+
+
+
+    </body>
+</html>
